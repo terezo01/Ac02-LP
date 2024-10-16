@@ -13,7 +13,7 @@ function addProduto(){
             somaEstoque += qtds[i];
         }
 
-        document.getElementById('totalProduto'). innerHTML = `Total de produtos: ${produtos.lenght}`;
+        document.getElementById('totalProduto'). innerHTML = `Total de produtos: ${produtos.length}`;
         document.getElementById('totalEstoque'). innerHTML = `Total de produtos no estoque: ${somaEstoque}`;
         document.getElementById('maiorEstoque'). innerHTML = `O maior estoque de um único produto: ${Math.max(...qtds)} `;
         return
@@ -22,8 +22,8 @@ function addProduto(){
         alert('Verifique se você não deixou nada em branco');
         return
     }
-
-    produtos.push(produto);
+    
+    produtos.push(produto.toLowerCase());
     qtds.push(qtd);
 
     document.getElementById('produto').value =''
@@ -33,7 +33,7 @@ function addProduto(){
 }
 
 function produtoEspecifico(){
-    const searchProduto = document.getElementById('searchProduto').value;
+    const searchProduto = document.getElementById('searchProduto').value.toLowerCase();
 
     if(!produtos.includes(searchProduto)){
         alert('Esse produto não foi encontrado');
@@ -44,5 +44,6 @@ function produtoEspecifico(){
 
     document.getElementById('produtoEspecifico').innerHTML = `Produto: ${searchProduto}<br> Estoque: ${qtds[indexProduto]}`;
 
+    document.getElementById('searchProduto').value = ''
 
 }
