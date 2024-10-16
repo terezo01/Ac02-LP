@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Controle de estoque</h1>
+    <h2>-1 - Mostrar status</h2>
+    <input type="text" id="produto" placeholder="Produto">
+    <input type="number" id="qtd" placeholder="Quantidade">
+    <button onclick="addProduto()">Adicionar produto</button>
+    <p id="totalProduto"></p>
+    <p id="totalEstoque"></p>
+    <p id="maiorEstoque"></p>
+    <input type="text" id="searchProduto" placeholder="Digite o produto que deseja ver o estoque" >
+    <button onclick="produtoEspecifico()">Procurar produto</button>
+    <p id="produtoEspecifico"></p>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
